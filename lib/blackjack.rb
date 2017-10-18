@@ -38,7 +38,7 @@ def hit?(card_total)
 end
 
 def invalid_command
-    puts "Invalid"
+    puts "Please enter a valid command"
 end
 
 #####################################################
