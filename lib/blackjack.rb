@@ -1,3 +1,5 @@
+require 'irb'
+
 def welcome
   puts "Welcome to the Blackjack Table"
 end
@@ -58,11 +60,11 @@ end
 
 def runner
   welcome
-  x = initial_round
-  t = hit?(x)
-  display_card_total(t)
-  until t > 21
-    hit(t)
+  initial_score = initial_round
+  new_score = hit?(initial_score)
+  display_card_total(new_score)
+  while new_score <= 21
+    new_score = hit?(new_score)
   end
-  end_game(t)
+  end_game(new_score)
 end
